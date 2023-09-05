@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Inter|Monda">
+    <style>
+
+        .title{
+            opacity: 1;
+            transition: opacity 1s;
+        }
+
+        .sub-title{
+        opacity: 0;
+        transition: opacity 1s;
+        }
+
+        .fadeIn{
+            opacity: 1;
+        }
+
+        .fadeOut{
+            opacity: 0;
+        }
+    </style>
     <title>Onotto</title>
 </head>
 <body class="bg-[#FFFFE7C9] font-['Inter']">
@@ -12,10 +32,46 @@
         <a href="/" class="border-b-[1.5px] border-[#3F1D0B]">
             <p>Home</p>
         </a>
-        <a href="/privacy.html"  class="hover:border-b-[1.5px] hover:border-[#3F1D0B]">
+        <a href="/privacy.html" class="hover:border-b-[1.5px] hover:border-[#3F1D0B]">
             <p>Privacy</p>
         </a>
     </div>
-    <div class="flex justify-center grid content-center mt-[144px] text-[200px]">Onotto</div>
+
+    <div class="flex justify-center relative mt-[144px] text-center container-box">
+        
+        <div id="title" class="title text-[200px] h-[300px] w-[660px]">
+            Onotto
+        </div>
+       
+        <div id="sub-title" class="sub-title absolute top-[100px] text-[70px] h-[300px] w-[660px]">
+            note taking app
+        </div>
+    </div>
+
 </body>
 </html>
+
+<script>
+    const titleText  = document.getElementById('title');
+    const subTitleText = document.getElementById('sub-title');
+
+    function toggleFade(){
+        setTimeout(()=>{
+            titleText.classList.toggle('fadeOut');
+            setTimeout(() => {
+                subTitleText.classList.toggle('fadeIn');
+                setTimeout(() => {
+                    subTitleText.classList.toggle('fadeOut');
+                    setTimeout(() => {
+                        titleText.classList.toString('fadeIn');
+                        setTimeout(toggleFade, 0);
+                    },0);
+                }, 1500);
+            }, 1500);
+        }, 1500);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        toggleFade();
+    });
+</script>
