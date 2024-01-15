@@ -27,8 +27,18 @@
     </style>
     <title>Onotto</title>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7KMRT0290S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7KMRT0290S');
+</script>
+
 <body class="bg-[#FFFFE7C9] font-['Inter'] overflow-x-hidden">
-    <div class="flex justify-between px-20 pt-5 text-[#3F1D0B] text-sm">
+    <div class="flex justify-between px-10 lg:px-20 pt-5 text-[#3F1D0B] text-sm">
         <a href="/" class="border-b-[1.5px] border-[#3F1D0B]">
             <p>Home</p>
         </a>
@@ -43,7 +53,6 @@
     </div>
 
     <div class="flex justify-center items-center text-center container-box h-screen -mt-10">
-        
         <div id="title" class="title text-[16vw] w-[660px]">
             Onotto
         </div>
@@ -51,6 +60,11 @@
         <div id="sub-title" class="sub-title absolute mt-[240px] md:mt-[200px] text-[6.5vw] h-[300px] w-[660px]">
             note taking app
         </div>
+
+        <a href="https://play.google.com/store/apps/details?id=com.victor.note_app" class="absolute mt-[260px] border-[1.5px] border-[#3F1D0B] text-xl rounded-full py-2 px-6">
+            Download
+        </a>
+
     </div>
 
 </body>
